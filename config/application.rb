@@ -2,6 +2,9 @@ require_relative 'boot'
 
 require 'rails/all'
 
+# config.time_zone = 'Tokyo' #Time.zone.nowとかの時に日本時間を使用する
+# config.active_record.default_timezone = :local #DBの読み書きを日本時間でやる
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
