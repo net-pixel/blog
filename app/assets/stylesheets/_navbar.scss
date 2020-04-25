@@ -107,9 +107,15 @@ header{
   }
 
   /*Navi*/
+  .nav-sm {
+    width: 100%;
+    position: absolute;
+    right: -100%;
+  }
   .mainnav {
     display: none;
   }
+
 
   .menu-bg{
     position: fixed;
@@ -152,10 +158,8 @@ header{
     }
   }
   ul#nav.nav.nav-sm.change {
+    right: 0;
     width: 100vw;
-    margin-right: auto;
-    display: flex;
-    justify-content: center !important;
     .mainnav {
       flex-direction: column;
       display: block;
@@ -166,6 +170,9 @@ header{
         width: 100%;
         &:hover {
           background-color: white;
+          .select {
+            color: var(--primary-color);
+          }
         }
         .select.drop {
           width: 100%;
@@ -182,16 +189,23 @@ header{
       }
     }
   }
-  .sm.res {
+  .subnav.change {
     width: 100%;
     display: block;
     font-size:  20px;
     background-color: rgba(183, 183, 183, 0.619);
-
     .dds {
       width: 100%;
-      .select {
-        color: black;
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &:hover {
+          background-color: white;
+          .select {
+            color: var(--primary-color);
+          }
+        }
       }
     }
   }
