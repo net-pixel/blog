@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   helper_method :is_admin!
 
+  def index
+  end
+
   private
   def is_admin!
       if current_user && current_user.admin

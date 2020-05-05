@@ -171,7 +171,9 @@ header{
         &:hover {
           background-color: white;
           .select {
+            width: 100%;
             color: var(--primary-color);
+            text-align: center;
           }
         }
         .select.drop {
