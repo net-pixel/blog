@@ -124,3 +124,9 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+
+/*はみ出しを解消*/
+* {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
