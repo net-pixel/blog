@@ -10,6 +10,15 @@ $(function(){
     $('.subnav').toggleClass('change');
   });
 
+  $('.article-body').on('click', function() {
+    $('.subnav').removeClass('change');
+  });
+  $('.main_bg').on('click', function() {
+    $('.subnav').removeClass('change');
+  });
+  $('.site-title').on('click', function() {
+    $('.subnav').removeClass('change');
+  });
 
 })
 

@@ -1,0 +1,90 @@
+.main_bg {
+  background-image: image-url("bondi_beach.jpg");
+  height: 0;
+  width: 100%;
+  padding-top: 33.31697742%;
+  margin: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+.article-body{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  &__box{
+    margin: 20px auto;
+    width: 20rem;
+    position: relative;
+    .design {
+      text-decoration: none;
+    }
+    &__image{
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    &__title{
+      color: black;
+    }
+    &__time{
+      color: black;
+      font-size: 13px;
+    }
+    &__lead {
+      color: black;
+    }
+    &__button{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      .each-b{
+        text-decoration: none;
+        color: white;
+        margin: 1rem 5px 10px 5px;
+        background-color: gray;
+        width: 150px;
+        border-radius: 20px;
+        height: 30px;
+        line-height: 30px;
+      }
+      .each-ba{
+        text-decoration: none;
+        color: white;
+        margin: auto 10px 1rem 10px;
+        background-color: gray;
+        width: 70px;
+        border-radius: 20px;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+@media screen and (max-width:760px){
+  .article-body{
+      &__box{
+        width: 500px;
+        &__image{
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:540px){
+  .article-body{
+      &__box{
+        width: 300px;
+        &__image{
+        height: 200px;
+      }
+    }
+  }
+}
