@@ -36,6 +36,7 @@ $(function(){
       .done(function(children) {
         //親カテゴリーが変更されたら、子/孫カテゴリー、サイズを削除し、初期値にする
         $("#children_box").empty();
+        $("#children_box").css('display', 'block');
         $("#grandchildren_box").empty();
         let insertHTML = '';
         children.forEach(function(child) {
@@ -66,6 +67,8 @@ $(function(){
       .done(function(grandchildren) {
         if (grandchildren.length != 0) {
           $("#grandchildren_box").empty();
+          $("#grandchildren_box").css('display', 'block');
+
           let insertHTML = '';
           grandchildren.forEach(function(grandchild) {
             insertHTML += appendOption(grandchild);

@@ -8,7 +8,7 @@
       <div class="article-body__box col-xl-4 col-md-6 col-sm-12">
         <%= link_to article_path(article), class: "design" do %>
           <div class="article-body__box__category">
-            <%= article.category.name %>
+            #<%= article.category.name %>
           </div>
           <div class="article-body__box__image">
             <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
@@ -18,8 +18,8 @@
           </h4>
           <div class="article-body__box__time">
             <%= article.updated_at.strftime("%Y年%m月%e日") %>
-            <%# <%= article.user.username %>
-            <%# <%= pluralize(article.views, "View") %>
+            <%# <%= article.user.username %> <%#編集者の表示%>
+            <%# <%= pluralize(article.views, "View") %> <%#viewの表示%>
           </div>
           <div  class="article-body__box__lead">
             <%= article.body.to_plain_text.truncate_words(15) %>
