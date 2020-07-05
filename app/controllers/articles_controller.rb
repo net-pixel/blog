@@ -2,12 +2,12 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :is_admin!, except: [:index, :show]
+  before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all
-    # @user = User.find_by(params[:id])
   end
 
   # GET /articles/1
@@ -22,8 +22,12 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  # GET /articles/1/edit
-  def edit
+  def get_category_children
+    @category_children = Category.find(params[:parent_name]).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   # POST /articles
@@ -31,16 +35,21 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    # binding.pry
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
+        binding.pry
+
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # GET /articles/1/edit
+  def edit
   end
 
   # PATCH/PUT /articles/1
@@ -73,8 +82,13 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def set_category
+      @category_parent_array = Category.where(ancestry: nil)
+    end
+
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content, :thumbnail, :banner)
+      params.require(:article).permit(:title, :body, :thumbnail, :banner, :category_id)
     end
+
 end
