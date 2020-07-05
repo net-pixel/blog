@@ -12,23 +12,24 @@
   <% end %>
 
 
-  <div class="form-inputs">
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+  <div class="user-form__field__title">タイトル</div>
+  <%= f.text_field :title, :class=>"form-control"%>
+  <div class="user-form__field__title">カテゴリー</div>
+  <div class='user-form__field__category' id='category_box'>
+    <div class='pulldown user-form__field__category__box' id='partent_box'>
+      <%= f.select :category_id, options_for_select( @category_parent_array.pluck(:name, :id)),{include_blank: "選択してください"}, { class: "user-form__field__category__box__parent", id: "parent_category"} %>
     </div>
-    <%= f.label :thumbnail, class: "form-control" %>
-    <%= f.file_field :thumbnail %>
-    <%= f.label :banner, class: "form-control" %>
-    <%= f.file_field :banner %>
+    <div class='pulldown user-form__field__category__box__children' id='children_box'></div>
+    <div class='pulldown user-form__field__category__box__grandchildren' id='grandchildren_box'></div>
   </div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.rich_text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="user-form__field__title">サムネイル</div>
+  <%= f.file_field :thumbnail %>
+  <div class="user-form__field__title">バナー</div>
+  <%= f.file_field :banner %>
+  <div class="user-form__field__title">コンテンツ</div>
+  <%= f.rich_text_area :body %>
+  <div class="user-form__field__create">
+    <%= f.submit :class=>"user-form__field__create__button" %>
   </div>
 <% end %>

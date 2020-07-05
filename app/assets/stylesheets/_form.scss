@@ -1,0 +1,100 @@
+.user-form {
+  padding: 130px;
+  margin: auto;
+  &__field {
+    max-width: 400px;
+    margin: auto;
+    &__title {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+    &__category {
+      width: 100%;
+      margin-bottom: 0;
+      &__box {
+        width: 100%;
+        &__parent {
+          width: 100%;
+          height: calc(1.5em + 0.75rem + 2px);
+          border-radius: 0.25rem;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+        }
+        &__children {
+          width: 100%;
+          height: calc(1.5em + 0.75rem + 2px);
+          border-radius: 0.25rem;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+        }
+        &__grandchildren {
+          width: 100%;
+          height: calc(1.5em + 0.75rem + 2px);
+          border-radius: 0.25rem;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+        }
+      }
+
+    }
+    &__actions {
+      margin-top: 30px;
+      max-width: 400px;
+      height: calc(1.5em + 0.75rem + 2px);
+      background-color: gray;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    &__create {
+      margin-top: 30px;
+      max-width: 100%;
+      height: calc(1.5em + 0.75rem + 2px);
+      border-radius: 0.25rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      &__button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__article {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+input.btn {
+  color: white;
+}
+
+.trix-content h1 {
+  border-bottom: 1px solid #ccc;
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.trix-content {
+  font-size: 16px;
+  line-height: 26px;
+  color: #111111;
+  min-height: 15em;
+  }
+
+@media screen and (max-width:760px){
+  .user-form{
+    padding: 100px 30px 30px 30px;
+  }
+}

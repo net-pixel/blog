@@ -58,4 +58,5 @@ gem 'devise'
 gem 'simple_form'
 gem 'pry-rails'
 gem 'faker'
+gem 'ancestry'
 #####
