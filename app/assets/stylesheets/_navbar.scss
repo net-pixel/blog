@@ -18,6 +18,19 @@ header{
   }
 }
 
+.form-control {
+  height: 30px!important;
+}
+.form-inline {
+  margin-right: 20px;
+}
+
+.fas.fa-search {
+  font-size: 1em;
+  transform: translateY(2%);
+  color: white;
+  text-decoration: none;
+}
 
 /*navigation laptop*/
 .nav{
@@ -70,14 +83,35 @@ header{
   display: block;
   transition: 0.5s;
 }
-// .sm.res {
-//   display: none;
-// }
 
+@media screen and (max-width:894px){
+  .form-control {
+    width: 100px!important;
+  }
+}
 
 @media screen and (max-width:770px){
   .subnav.change {
     display: none;
+  }
+  
+  .searchbox {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .form-control {
+    width: 80%!important;
+    height: 50px!important;
+  }
+  .form-inline {
+    margin: 0 0 0 60px;
+    width: 100%;
+  }
+  .fas.fa-search {
+    margin-left: 30px;
+    font-size: 1.8em;
+    transform: translateY(18%);
   }
 
   #menu{

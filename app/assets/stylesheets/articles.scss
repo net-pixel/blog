@@ -11,6 +11,29 @@
   background-position: center center;
 }
 
+a.fab {
+  margin-left: 30px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.fab.fa-github {
+  color: black;
+  text-decoration: none;
+}
+.fab.fa-instagram {
+  color: black;
+  text-decoration: none;
+}
+.fab.fa-twitter {
+  color: black;
+  text-decoration: none;
+}
+.fab.fa-facebook {
+  color: black;
+  text-decoration: none;
+}
+
 .article-body{
   margin-top: 50px;
   display: flex;
@@ -38,6 +61,9 @@
     }
     .design {
       text-decoration: none;
+    }
+    &__category {
+      color: black;
     }
     &__image{
       width: 100%;
