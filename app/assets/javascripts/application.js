@@ -19,6 +19,5 @@ $(function(){
   $('.site-title').on('click', function() {
     $('.subnav').removeClass('change');
   });
-
 })
 
