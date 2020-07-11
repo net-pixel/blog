@@ -15,6 +15,14 @@
                 <div>
                     <ul class="nav nav-sm" id="nav">
                     <div class="mainnav">
+                      <div class="searchbox">
+                        <%= form_with(url: "", local: true, method: :get, class: "form-inline") do |form| %>
+                          <%= form.text_field :keyword, placeholder: "Search...", class: "form-control mr-sm-2 search-input" %>
+                          <%= link_to "", class: "navbar__sh" do %>
+                            <i class="fas fa-search"></i>
+                          <% end %>
+                        <% end %>
+                      </div>
                       <li><%= link_to "home", articles_path, class: 'select' %></li>
                       <li><%= link_to  "about", about_path, class: 'select' %></li>
                       <li><%= link_to "cover", "#", class: 'select' %></li>
