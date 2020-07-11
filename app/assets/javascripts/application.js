@@ -13,6 +13,9 @@ $(function(){
   $('.article-body').on('click', function() {
     $('.subnav').removeClass('change');
   });
+  $('.article-body__box').on('click', function() {
+    $('.subnav').removeClass('change');
+  });
   $('.main_bg').on('click', function() {
     $('.subnav').removeClass('change');
   });
