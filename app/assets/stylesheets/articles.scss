@@ -36,22 +36,18 @@ a.fab {
 
 .article-body{
   margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
   &__box{
     margin: 20px auto;
     width: 20rem;
     position: relative;
     display: inline-block;
-    // border-bottom: 1px solid rgb(207, 207, 207);
     &::before {
       content: '';
       position: absolute;
       left: 50%;
       bottom: -10px; /*下線の上下位置調整*/
       display: inline-block;
-      width: 90%; /*下線の幅*/
+      width: 92%; /*下線の幅*/
       height: 1px; /*下線の太さ*/
       -moz-transform: translateX(-50%);
       -webkit-transform: translateX(-50%);
@@ -64,6 +60,7 @@ a.fab {
     }
     &__category {
       color: black;
+      font-size: 13px;
     }
     &__image{
       width: 100%;

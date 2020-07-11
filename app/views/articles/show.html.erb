@@ -12,12 +12,12 @@
         <%= @article.title %>
       </h1>
       <p class="lead">
-        <%= @article.updated_at.strftime("%Y年%m月%e日") %> 
+        <%= @article.updated_at.strftime("%Y年%m月%e日") %>
         <%# by <%= @article.user.username %>
         <%# | <%= pluralize(@article.views, "View") %>
       </p>
       <div class="article-body__box__category">
-        #<%= @article.category.root.name %>
+        <%= @article.category.root.name %>
         ><%= @article.category.parent.name %>
         ><%= @article.category.name %>
       </div>

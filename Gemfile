@@ -59,4 +59,5 @@ gem 'simple_form'
 gem 'pry-rails'
 gem 'faker'
 gem 'ancestry'
+gem 'jquery-rails'
 #####
