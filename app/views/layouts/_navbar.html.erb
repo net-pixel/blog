@@ -1,54 +1,66 @@
 <header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 col-sm-12 col-12 site-title">
+            <div class="site-title">
               <%= link_to "on and off", articles_path, class: 'home' %>
             </div>
+            <div class="site-nav">
+              <div class="search-btn">
+                <%= link_to "", class: "navbar__sh" do %>
+                  <i class="fas fa-search"></i>
+                <% end %>
+              </div>
 
-
-            <div class="col-md-8 col-sm-12" id="menu-bar">
-                <div id="menu" class="menu">
-                    <div id="bar1" class="bar"></div>
-                    <div id="bar2" class="bar"></div>
-                    <div id="bar3" class="bar"></div>
-                </div>
-                <div>
-                    <ul class="nav nav-sm" id="nav">
-                    <div class="mainnav">
-                      <li><%= link_to "home", articles_path, class: 'select' %></li>
-                      <li><%= link_to  "about", about_path, class: 'select' %></li>
-                      <li><%= link_to "cover", "#", class: 'select' %></li>
-                      <li><%= link_to "contact", "#", class: 'select' %></li>
-                      <% if current_user %>
-                      <li>
-                        <a class="select drop"  id="subnav">
-                        <%= current_user.username %>
-                        <i class="fas fa-caret-down"></i>
-                        </a>
-                      </li>
-                    </div>
-                    <div class="subnav">
-                      <li>
-                        <div class="dds">
-                        <% if current_user.admin %>
-                        <a class="dds__select" href="<%= new_article_path %>">New Post</a>
-                        <% end %>
-                        <a class="dds__select" href="<%= edit_user_registration_path %>">Account Settings</a>
-                        <%= link_to "Logout", destroy_user_session_path, class:'dds__select', method: :delete %>
-                        </div>
-                      </li>
-                      <% else %>
-                        <li class="nav-item">
-                            <%= link_to "Signup", new_user_registration_path, class:'select' %>
+              <div class="" id="menu-bar">
+                  <div id="menu" class="menu">
+                      <div id="bar1" class="bar"></div>
+                      <div id="bar2" class="bar"></div>
+                      <div id="bar3" class="bar"></div>
+                  </div>
+                  <div>
+                      <ul class="nav nav-sm" id="nav">
+                      <div class="mainnav">
+                        <%# <div class="searchbox"> %>
+                          <%# <%= form_with(url: "", local: true, method: :get, class: "form-inline") do |form| %>
+                            <%# <%= form.text_field :keyword, placeholder: "Search...", class: "form-control mr-sm-2 search-input"%>
+                            <%# <%= link_to "", class: "navbar__sh" do %>
+                              <%# <i class="fas fa-search"></i> %>
+                            <%# <% end %> 
+                          <%# <% end %> 
+                        <%# </div> %>
+                        <li><%= link_to "home", articles_path, class: 'select' %></li>
+                        <li><%= link_to  "category", "#", class: 'select' %></li>
+                        <li><%= link_to "about", about_path, class: 'select' %></li>
+                        <% if current_user %>
+                        <li>
+                          <a class="select drop"  id="subnav">
+                          <%= current_user.username %>
+                          <i class="fas fa-caret-down"></i>
+                          </a>
                         </li>
-                        <li class="nav-item">
-                        <%= link_to "Signin", new_user_session_path, class:'select' %>
-                        </li>
-                      <% end %>
                       </div>
-                    </ul>
-                </div>
-
+                      <div class="subnav">
+                        <li>
+                          <div class="dds">
+                          <% if current_user.admin %>
+                          <a class="dds__select" href="<%= new_article_path %>">New Post</a>
+                          <% end %>
+                          <a class="dds__select" href="<%= edit_user_registration_path %>">Account Settings</a>
+                          <%= link_to "Logout", destroy_user_session_path, class:'dds__select', method: :delete %>
+                          </div>
+                        </li>
+                        <% else %>
+                          <li class="nav-item">
+                              <%= link_to "Signup", new_user_registration_path, class:'select' %>
+                          </li>
+                          <li class="nav-item">
+                          <%= link_to "Signin", new_user_session_path, class:'select' %>
+                          </li>
+                        <% end %>
+                        </div>
+                      </ul>
+                  </div>
+              </div>
             </div>
             <div class="menu-bg" id="menu-bg"></div>
         </div>

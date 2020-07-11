@@ -13,11 +13,44 @@ header{
   text-decoration: none;
   font-size: 40px;
   line-height: 70px;
+  margin-left: 30px;
   &:hover{
     color: var(--primary-color);
   }
 }
 
+// .form-control {
+//   height: 30px!important;
+// }
+// .form-inline {
+//   margin-right: 20px;
+// }
+
+.site-nav {
+  display: flex;
+  text-align: right;
+  justify-content: flex-end;
+  margin: 0 30px 0 auto;
+}
+
+.searchbox {
+  display: none;
+}
+
+.search-btn {
+  display: flex;
+  line-height: 70px;
+  margin-right: 20px;
+}
+
+.fas.fa-search {
+  // transform: translateY(2%);
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  margin-left: 30px;
+  transform: translateY(10%);
+}
 
 /*navigation laptop*/
 .nav{
@@ -70,14 +103,33 @@ header{
   display: block;
   transition: 0.5s;
 }
-// .sm.res {
-//   display: none;
-// }
 
-
-@media screen and (max-width:770px){
+@media screen and (max-width:800px){
   .subnav.change {
     display: none;
+  }
+
+  // .searchbox {
+  //   display: flex;
+  //   text-align: center;
+  //   justify-content: center;
+  // }
+
+  .search-btn {
+    margin-right: 50px;
+  }
+  .form-control {
+    width: 80%!important;
+    height: 50px!important;
+  }
+  .form-inline {
+    margin: 0 0 0 60px;
+    width: 100%;
+  }
+  .fas.fa-search {
+    margin-left: 30px;
+    font-size: 1.8em;
+    transform: translateY(18%);
   }
 
   #menu{
@@ -109,6 +161,7 @@ header{
 
   /*Navi*/
   .nav-sm {
+    margin-top: 70px;
     width: 100%;
     position: absolute;
     right: -100%;
