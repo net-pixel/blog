@@ -1,0 +1,22 @@
+<div class="space"></div>
+<div class="space"></div>
+<div class="container">
+  <div class="row">
+    <div class="article-body__box" style="width:100%">
+        <%= form_with(url: "", local: true, method: :get, class: "search-field") do |form| %>
+        <%= form.text_field :keyword, placeholder: "Search...", class: "mr-sm-2 search-field__input"%>
+
+        <div class="search-btn">
+          <%= link_to search_path, class: "search" do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+          <%= link_to root_path do %>
+            <div class="search-btn__end"><span></span></div>
+          <% end %>
+
+        </div>
+        <% end %>
+
+    </div>
+  </div>
+</div>
