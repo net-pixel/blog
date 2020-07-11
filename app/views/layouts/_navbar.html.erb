@@ -29,8 +29,8 @@
                           <%# <% end %> 
                         <%# </div> %>
                         <li><%= link_to "home", articles_path, class: 'select' %></li>
-                        <li><%= link_to  "category", about_path, class: 'select' %></li>
-                        <li><%= link_to "about", "#", class: 'select' %></li>
+                        <li><%= link_to  "category", "#", class: 'select' %></li>
+                        <li><%= link_to "about", about_path, class: 'select' %></li>
                         <% if current_user %>
                         <li>
                           <a class="select drop"  id="subnav">
