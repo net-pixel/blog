@@ -10,10 +10,6 @@ $(function(){
     $('.subnav').toggleClass('change');
   });
 
-  $('#search').on('click', function () {
-    $('.subnav').toggleClass('change');
-  });
-
   $('.article-body').on('click', function() {
     $('.subnav').removeClass('change');
   });

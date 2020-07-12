@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-  def about
+  def search
+    @search = Article.ransack(params[:q])
+    @articles = @search.result.includes(:category)
   end
 end
