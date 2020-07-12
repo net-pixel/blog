@@ -11,38 +11,39 @@
         <%= link_to root_path do %>
         <div class="search-btn__end"><span></span></div>
         <% end %>
-
       </div>
       <% end %>
 
     </div>
-    <% if @search.result.present? %>
+    <% if params[:q]['title_cont'] == "" %>
+      <p>検索キーワードがありません</p>
+    <% elsif @search.result.present? %>
     <% @articles.each do |article|%>
-    <div class="article-body__box" style="width:100%">
-      <div class="article-body__box__result">
-        <div class="article-body__box__result__image">
-          <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
-        </div>
-        <div class="article-body__box__result__content">
-          <div class="article-body__box__result__content__title">
-            <p><%= article.title %></p>
+      <div class="article-body__box" style="width:100%">
+        <div class="article-body__box__result">
+          <div class="article-body__box__result__image">
+            <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
           </div>
-          <div class="article-body__box__result__content__category">
-            <%= article.category.root.name %>
-            -<%= article.category.parent.name %>
-            -<%= article.category.name %>
+          <div class="article-body__box__result__content">
+            <div class="article-body__box__result__content__title">
+              <p><%= article.title %></p>
+            </div>
+            <div class="article-body__box__result__content__category">
+              <%= article.category.root.name %>
+              -<%= article.category.parent.name %>
+              -<%= article.category.name %>
+            </div>
+            <div class="article-body__box__result__content__lead">
+              <%= article.updated_at.strftime("%Y年%m月%e日") %> -
+              <%= article.body.to_plain_text.truncate_words(15) %>
+            </div>
           </div>
-          <div class="article-body__box__result__content__lead">
-            <%= article.updated_at.strftime("%Y年%m月%e日") %> -
-            <%= article.body.to_plain_text.truncate_words(15) %>
-          </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-    <% end %>
-    <% else%>Ï
-
+      <% end %>
+    <% else%>
+      <p>該当する記事はありませんでした</p>
     <% end %>
 
   </div>
