@@ -16,8 +16,11 @@
 
     </div>
     <% if params[:q]['title_cont'] == "" %>
-    <p>検索キーワードがありません</p>
+    <div class="article-body" >
+    <p>検索キーワードを入力してください</p>
+    </div>
     <% elsif @search.result.present? %>
+    <%= "「#{params[:q][:title_cont]}」の検索結果: #{@search.result.count}個" %>
     <% @articles.each do |article|%>
       <%= link_to article_path(article) do %>
 
@@ -46,7 +49,10 @@
       <% end %>
     <% end %>
     <% else%>
+    <div class="article-body" >
+    <p><%= "「#{params[:q][:title_cont]}」の検索結果: #{@search.result.count}個" %></p>
     <p>該当する記事はありませんでした</p>
+    </div>
     <% end %>
 
   </div>
