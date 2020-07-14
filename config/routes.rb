@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   get 'search', to: 'pages#search'
+  get 'search_result', to: 'pages#search_result'
 end

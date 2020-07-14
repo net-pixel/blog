@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="article-body__box" style="width:100%">
-      <%= search_form_for @search, url: search_path, class: "search-field" do |f|%>
+      <%= search_form_for @search, url: search_result_path, class: "search-field" do |f|%>
       <%= f.search_field :title_cont, placeholder: "Search...", class: "mr-sm-2 search-field__input" %>
       <div class="search-btn">
         <%= button_tag type: 'submit', class: 'search-btn__icon' do%>
@@ -15,36 +15,4 @@
       <% end %>
 
     </div>
-    <% if params[:q]['title_cont'] == "" %>
-      <p>検索キーワードがありません</p>
-    <% elsif @search.result.present? %>
-    <% @articles.each do |article|%>
-      <div class="article-body__box" style="width:100%">
-        <div class="article-body__box__result">
-          <div class="article-body__box__result__image">
-            <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
-          </div>
-          <div class="article-body__box__result__content">
-            <div class="article-body__box__result__content__title">
-              <p><%= article.title %></p>
-            </div>
-            <div class="article-body__box__result__content__category">
-              <%= article.category.root.name %>
-              -<%= article.category.parent.name %>
-              -<%= article.category.name %>
-            </div>
-            <div class="article-body__box__result__content__lead">
-              <%= article.updated_at.strftime("%Y年%m月%e日") %> -
-              <%= article.body.to_plain_text.truncate_words(15) %>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <% end %>
-    <% else%>
-      <p>該当する記事はありませんでした</p>
-    <% end %>
-
-  </div>
 </div>
