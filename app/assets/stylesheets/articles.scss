@@ -169,3 +169,28 @@ a.fab {
     }
   }
 }
+
+//paginate start
+.pagination {
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+a.page-link {
+  border: none;
+  color: white;
+  margin: 10px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50px !important;
+}
+.pagination .active a.page-link {
+  background: gray;
+  border-radius: 50px;
+  border: none;
+}
+.pagination li a.page-link:hover {
+  border-radius: 50px;
+  color: black;
+}
+//paginate end
