@@ -56,3 +56,12 @@ background-color: var(--primary-color)!important;
 .japanese{
 	font-family: var(--M-PLUS-1-p);
 }
+
+footer {
+    .footer-bottom {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
