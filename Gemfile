@@ -60,4 +60,5 @@ gem 'pry-rails'
 gem 'faker'
 gem 'ancestry'
 gem 'ransack'
+gem 'kaminari'
 #####
