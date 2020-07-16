@@ -19,13 +19,6 @@ header{
   }
 }
 
-// .form-control {
-//   height: 30px!important;
-// }
-// .form-inline {
-//   margin-right: 20px;
-// }
-
 .site-nav {
   display: flex;
   text-align: right;
@@ -33,23 +26,75 @@ header{
   margin: 0 30px 0 auto;
 }
 
-.searchbox {
-  display: none;
+.search-field {
+  display: flex;
+  &__input {
+    width: 80%;
+    margin: 0 0 0 30px;
+    border: none;
+    padding: 0 10px;
+  }
 }
+
+.search-head-btn {
+  display: flex;
+  line-height: 70px;
+  margin-right: 20px;
+  .fas.fa-search {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-left: 30px;
+    transform: translateY(11%);
+  }
+}
+
+
 
 .search-btn {
   display: flex;
   line-height: 70px;
   margin-right: 20px;
-}
+  &__icon {
+    border: none;
+    outline: none!important;
+    background-color: white;
+    .fas.fa-search {
+      color: black;
+      text-decoration: none;
+      font-size: 1.5em;
+      margin-left: 30px;
+      transform: translateY(11%);
+    }
 
-.fas.fa-search {
-  // transform: translateY(2%);
-  color: white;
-  text-decoration: none;
-  font-size: 1.5em;
-  margin-left: 30px;
-  transform: translateY(10%);
+  }
+
+  &__end{
+    display: block;
+    width: 50px;
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+    cursor: pointer;
+    transform: translateY(-3%);
+  }
+  span::before,
+  span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 5%;
+    background: black;
+  }
+  span::before {
+    transform: rotate(-45deg);
+  }
+  span::after {
+    transform: rotate(45deg);
+  }
 }
 
 /*navigation laptop*/
@@ -108,14 +153,7 @@ header{
   .subnav.change {
     display: none;
   }
-
-  // .searchbox {
-  //   display: flex;
-  //   text-align: center;
-  //   justify-content: center;
-  // }
-
-  .search-btn {
+  .search-head-btn {
     margin-right: 50px;
   }
   .form-control {
@@ -129,7 +167,10 @@ header{
   .fas.fa-search {
     margin-left: 30px;
     font-size: 1.8em;
-    transform: translateY(18%);
+  }
+  .search-btn__end {
+    font-size: 1.8em;
+    transform: translateY(-3%);
   }
 
   #menu{
@@ -158,6 +199,8 @@ header{
   #bar3{
       transform: translateY(7px);
   }
+
+
 
   /*Navi*/
   .nav-sm {
@@ -267,3 +310,4 @@ header{
   }
 }
 /* @media screen and (max-width:770px)終了 */
+

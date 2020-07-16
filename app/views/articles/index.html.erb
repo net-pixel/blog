@@ -1,10 +1,11 @@
-<div class="space">
+<%= render 'layouts/navbar' %>
+<div class="space"></div>
+
 <div class="main_bg">
-</div>
 
 <div class="container article-body">
   <div class="row">
-    <% @articles.each do |article| %>
+    <% @article.each do |article| %>
       <div class="article-body__box col-xl-4 col-md-6 col-sm-12">
         <%= link_to article_path(article), class: "design" do %>
           <div class="article-body__box__image">
@@ -25,13 +26,6 @@
             <%= article.body.to_plain_text.truncate_words(15) %>
 
           </div>
-          <%# <div  class="article-body__box__lead"> %>
-            <%# <%= article.body.to_plain_text.truncate_words(15) %>
-          <%# </div> %>
-          <%# <div class="article-body__box__button"> %>
-            <%# <td><%= link_to 'READ MORE', article, class: "each-b"%></td> 
-          <%# </div> %>
-
             <% if current_user %>
               <% if current_user.admin %>
                 <hr/>
