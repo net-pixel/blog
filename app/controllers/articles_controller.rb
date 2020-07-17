@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @article = Article.all.order("created_at DESC").page(params[:page]).per(10)
+    @article = Article.all.order("created_at DESC").page(params[:page]).per(18)
   end
 
   # GET /articles/1
