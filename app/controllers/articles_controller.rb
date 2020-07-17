@@ -80,13 +80,9 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def set_category
-      @category_parent_array = Category.where(ancestry: nil)
-    end
-
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :body, :thumbnail, :banner, :category_id)
+      params.require(:article).permit(:title, :body, :thumbnail, :banner)
     end
 
 end
