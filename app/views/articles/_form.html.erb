@@ -14,15 +14,6 @@
 
   <div class="user-form__field__title">タイトル</div>
   <%= f.text_field :title, :class=>"form-control"%>
-  <div class="user-form__field__title">カテゴリー</div>
-  <div class='user-form__field__category' id='category_box'>
-    <div class='pulldown user-form__field__category__box' id='partent_box'>
-      <%= f.select :category_id, options_for_select( @category_parent_array.pluck(:name, :id)),{include_blank: "選択してください"}, { class: "user-form__field__category__box__parent", id: "parent_category"} %>
-    </div>
-    <div class='pulldown user-form__field__category__box__children' id='children_box'></div>
-    <div class='pulldown user-form__field__category__box__grandchildren' id='grandchildren_box'></div>
-  </div>
-
   <div class="user-form__field__title">サムネイル</div>
   <%= f.file_field :thumbnail %>
   <div class="user-form__field__title">バナー</div>
