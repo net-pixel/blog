@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
   belongs_to :user
-  belongs_to :category
   has_one_attached :thumbnail
   has_one_attached :banner
   has_rich_text :body
