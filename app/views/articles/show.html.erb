@@ -12,6 +12,9 @@
       <h1 class="display-4">
         <%= @article.title %>
       </h1>
+      <div class="article-body__box__tag">
+        <%= @article.tag_list %>
+      </div>
       <p class="lead">
         <%= @article.updated_at.strftime("%Y年%m月%e日") %>
         <%# by <%= @article.user.username %>
