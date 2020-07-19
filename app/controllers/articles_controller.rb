@@ -27,7 +27,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
     @article.tag_list.add
     @article.tag_list.remove
-    @user.save
   end
 
   # POST /articles
