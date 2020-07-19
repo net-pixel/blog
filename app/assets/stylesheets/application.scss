@@ -65,3 +65,29 @@ footer {
         align-items: center;
     }
 }
+.tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+&__cloud {
+    width: 400px;
+    line-height: 1.6em;
+    a {
+        color: black;
+        font-style: italic;
+        margin-right: 10px;
+        &:hover {
+            text-decoration: none;
+            color: gray;
+        }
+    }
+  }
+}
+
+@media screen and (max-width:540px) {
+    .tag {
+    &__cloud {
+        width: 80%;
+      }
+    }
+}

@@ -3,6 +3,7 @@ class Article < ApplicationRecord
   has_one_attached :thumbnail
   has_one_attached :banner
   has_rich_text :body
+  acts_as_taggable
 
 
   validates :title, length: { minimum: 5 }

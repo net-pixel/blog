@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
-
   <div class="user-form__field__title">タイトル</div>
   <%= f.text_field :title, :class=>"form-control"%>
+
+  <div class="user-form__field__title">タグ</div>
+  <%= text_field_tag 'article[tag_list]', article.tag_list, class: "form-control" %>
   <div class="user-form__field__title">サムネイル</div>
   <%= f.file_field :thumbnail %>
   <div class="user-form__field__title">バナー</div>

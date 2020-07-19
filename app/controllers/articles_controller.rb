@@ -2,12 +2,17 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :is_admin!, except: [:index, :show]
-  before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @article = Article.all.order("created_at DESC").page(params[:page]).per(18)
+    if params[:tag]
+      @article = Article.tagged_with(params[:tag])
+    else
+      @article = Article.all.order("created_at DESC").page(params[:page]).per(18)
+    end
+    @all = Article.all
+
   end
 
   # GET /articles/1
@@ -20,14 +25,9 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-  end
-
-  def get_category_children
-    @category_children = Category.find(params[:parent_name]).children
-  end
-
-  def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
+    @article.tag_list.add
+    @article.tag_list.remove
+    @user.save
   end
 
   # POST /articles
@@ -80,13 +80,9 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def set_category
-      @category_parent_array = Category.where(ancestry: nil)
-    end
-
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :body, :thumbnail, :banner, :category_id)
+      params.require(:article).permit(:title, :body, :thumbnail, :banner, :tag_list)
     end
 
 end

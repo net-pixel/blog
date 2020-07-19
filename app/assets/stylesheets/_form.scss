@@ -8,37 +8,6 @@
       margin-top: 20px;
       font-size: 1.2rem;
     }
-    &__category {
-      width: 100%;
-      margin-bottom: 0;
-      &__box {
-        width: 100%;
-        &__parent {
-          width: 100%;
-          height: calc(1.5em + 0.75rem + 2px);
-          border-radius: 0.25rem;
-          cursor: pointer;
-          align-items: center;
-          justify-content: center;
-          display: flex;
-        }
-        &__children {
-          width: 100%;
-          height: calc(1.5em + 0.75rem + 2px);
-          border-radius: 0.25rem;
-          cursor: pointer;
-          margin-top: 5px;
-        }
-        &__grandchildren {
-          width: 100%;
-          height: calc(1.5em + 0.75rem + 2px);
-          border-radius: 0.25rem;
-          cursor: pointer;
-          margin-top: 7px;
-        }
-      }
-
-    }
     &__actions {
       margin-top: 30px;
       max-width: 400px;
