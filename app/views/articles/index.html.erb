@@ -3,40 +3,50 @@
 
 <div class="main_bg">
 
-<div class="container article-body">
-  <div class="row">
-    <% @article.each do |article| %>
+  <div class="container article-body">
+    <div class="row">
+      <% @article.each do |article| %>
       <div class="article-body__box col-xl-4 col-md-6 col-sm-12">
         <%= link_to article_path(article), class: "design" do %>
-          <div class="article-body__box__image">
-            <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
-          </div>
-          <div class="article-body__box__tag">
-            <%= article.tag_list %>
-          </div>
-          <h4 class="article-body__box__title">
-            <%= article.title %>
-          </h4>
-          <div class="article-body__box__lead">
-            <%= article.updated_at.strftime("%Y年%m月%e日") %> -
-            <%# <%= article.user.username %> <%#編集者の表示%>
-            <%# <%= pluralize(article.views, "View") %> <%#viewの表示%>
-            <%= article.body.to_plain_text.truncate_words(15) %>
+        <div class="article-body__box__image">
+          <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
+        </div>
+        <h4 class="article-body__box__title">
+          <%= article.title %>
+        </h4>
+        <div class="article-body__box__lead">
+          <%= article.updated_at.strftime("%Y年%m月%e日") %> -
+          <%# <%= article.user.username %> <%#編集者の表示%>
+          <%# <%= pluralize(article.views, "View") %> <%#viewの表示%>
+          <%= article.body.to_plain_text.truncate_words(15) %>
 
-          </div>
-            <% if current_user %>
-              <% if current_user.admin %>
-                <hr/>
-                <div class="article-body__box__button">
-                  <td><%= link_to 'Edit', edit_article_path(article), class: "each-ba"  %></td>
-                  <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "each-ba"  %></td>
-                </div>
-              <% end %>
-            <% else %>
-            <% end %>
+        </div>
+        <% if current_user %>
+        <% if current_user.admin %>
+        <hr />
+        <div class="article-body__box__button">
+          <td><%= link_to 'Edit', edit_article_path(article), class: "each-ba"  %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "each-ba"  %>
+          </td>
+        </div>
+        <% end %>
+        <% else %>
+        <% end %>
+        <% end %>
+        <% article.tag_list.each do |tag| %>
+        <%= link_to tag, tag_path(tag_name: tag), class: "article-body__box__tag" %>
         <% end %>
       </div>
+      <% end %>
+    </div>
+    <%= paginate @article %>
+  </div>
+<div class="tag">
+  <div class="tag__cloud">
+    <% @all.each do |article|%>
+    <% article.tag_list.each do |tag| %>
+    <%= link_to tag, tag_path(tag_name: tag), class: "article-body__box__tag" %>
+    <% end %>
     <% end %>
   </div>
-    <%= paginate @article %>
 </div>

@@ -6,7 +6,13 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @article = Article.all.order("created_at DESC").page(params[:page]).per(18)
+    if params[:tag]
+      @article = Article.tagged_with(params[:tag])
+    else
+      @article = Article.all.order("created_at DESC").page(params[:page]).per(18)
+    end
+    @all = Article.all
+
   end
 
   # GET /articles/1

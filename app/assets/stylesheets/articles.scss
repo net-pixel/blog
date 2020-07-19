@@ -2,6 +2,13 @@
   padding-top: 70px;
 }
 
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .main_bg {
   background-image: image-url("bondi_beach.jpg");
   height: 0;
@@ -59,10 +66,6 @@ a.fab {
     .design {
       text-decoration: none;
     }
-    &__tag {
-      color: black;
-      font-size: 13px;
-    }
     &__image{
       width: 100%;
       height: 200px;
@@ -110,59 +113,87 @@ a.fab {
         line-height: 30px;
       }
     }
+    &__tag {
+      padding-top: 20px;
+      color: black;
+      font-size: 13px;
+      margin-right: 20px;
+      font-style: italic;
+      &:hover {
+        text-decoration: none;
+        color: gray;
+      }
+    }
     &__result {
       display: flex;
-      &__image{
-        display: inline-block;
-        height: 30%;
-        width: 30%;
-        overflow: hidden;
-        margin-right: 20px;
-
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: contain;
-
+        &__image{
+          height: 30%;
+          width: 30%;
+          margin-right: 20px;
+          display: inline-block;
+          overflow: hidden;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
         }
-      }
+
       &__content {
         width: 100%;
         &__title {
           font-size: 1.3rem;
           color: black;
         }
-        &__category {
-          font-size: 0.8rem;
-          color: black;
-        }
         &__lead {
           color: black;
+        }
+        &__tag {
+          font-size: 0.8rem;
+          color: black;
+          margin-left: 20px;
+          font-style: italic;
         }
       }
     }
   }
 }
 
-.jumbotron {
-  background-color: white;
-}
-
-@media screen and (max-width:760px){
+@media screen and (max-width:770px){
   .article-body{
       &__box{
         width: 500px;
+        margin: 5px;
         &__image{
         height: 300px;
-      }
+        }
+        &__result {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          &__image {
+            height: 100%;
+            width: 100%;
+            margin-right: 0;
+          }
+          &__content {
+            width: 100%;
+            &__tag {
+              margin-left: 20px;
+            }
+          }
+        }
     }
   }
 }
 
 @media screen and (max-width:540px){
   .article-body{
-      &__box{
-        width: 300px;
+    &__box{
+      width: 90%!important;
+      margin: 5%;
         &__image{
         height: 200px;
       }
