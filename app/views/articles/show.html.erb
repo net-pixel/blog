@@ -9,9 +9,9 @@
 <div class="container" style="margin-top: 2em">
   <div class="row">
     <div class="article-body__box" style="width:100%">
-      <h1 class="display-4">
+      <h2>
         <%= @article.title %>
-      </h1>
+      </h2>
       <% @article.tag_list.each do |tag| %>
         <%= link_to tag, tag_path(tag_name: tag), class: "article-body__box__tag" %>
       <% end %>
