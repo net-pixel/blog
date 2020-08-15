@@ -2,10 +2,10 @@
 <div class="space"></div>
 <div class="user-form">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
+    <!--修正予定<%= f.error_notification %> -->
 
     <div class="user-form__field">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <h2>更新</h2>
       <%= f.input :email, required: true, autofocus: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,22 +13,22 @@
       <% end %>
 
       <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
+                  hint: "変更がなければ空白にしてください",
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  hint: "更新には現在のパスワードを入力してください",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
 
       <div class="user-form__field__actions">
-        <%= f.button :submit, "Update" %>
+        <%= f.button :submit, "更新する" %>
       </div>
-      <h3>Cancel my account</h3>
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      
+      <p><%= link_to "退会する", registration_path(resource_name), class:"button", data: { confirm: "Are you sure?" }, method: :delete %></p>
       <%= link_to "Back", :back, class: "button"  %>
     </div>
 

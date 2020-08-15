@@ -1,0 +1,14 @@
+ja: # jaにする
+  simple_form:
+    labels:
+      user:
+        username: 'ユーザー名'
+        password: 'パスワード'
+    hints:
+      user:
+        username: 'サインインするユーザ名を入力してください'
+        password: '半角英数字のみ使えます'
+    placeholders:
+      user:
+        username: '氏名'
+        password: '****'

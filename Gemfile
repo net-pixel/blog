@@ -59,6 +59,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ##### Custom
 gem 'devise'
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'
 gem 'simple_form'
 gem 'pry-rails'
 gem 'faker'
