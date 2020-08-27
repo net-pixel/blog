@@ -50,8 +50,15 @@ test:
 production:
   <<: *default
   database: blog_production
-  username: blog
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  # username: blog
+  # password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+  
+  #以下AWSMySQL用に追記
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
+
+  #以下Heroku用
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: 5
