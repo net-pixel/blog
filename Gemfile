@@ -77,4 +77,5 @@ gem 'ancestry'
 gem 'ransack'
 gem 'kaminari'
 gem 'acts-as-taggable-on'
+gem "aws-sdk-s3", require: false
 #####
