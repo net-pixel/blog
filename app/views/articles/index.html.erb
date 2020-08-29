@@ -9,7 +9,7 @@
       <div class="article-body__box col-xl-4 col-md-6 col-sm-12">
         <%= link_to article_path(article), class: "design" do %>
         <div class="article-body__box__image">
-          <%= image_tag(url_for(article.thumbnail), style:'width:100%') if article.thumbnail.attached? %>
+          <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
         </div>
         <div class="article-body__box__title">
           <%= article.title %>
