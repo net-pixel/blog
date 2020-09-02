@@ -59,19 +59,24 @@ background-color: var(--primary-color)!important;
 
 footer {
     .footer-bottom {
-        padding: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 }
 .tag {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 50px;
 &__cloud {
     width: 400px;
     line-height: 1.6em;
+    &__title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
     a {
         color: black;
         font-style: italic;
