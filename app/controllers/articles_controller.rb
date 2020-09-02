@@ -11,7 +11,8 @@ class ArticlesController < ApplicationController
     else
       @article = Article.all.order("created_at DESC").page(params[:page]).per(18)
     end
-    @all = Article.all
+    @tags = ActsAsTaggableOn::Tag.all
+
 
   end
 

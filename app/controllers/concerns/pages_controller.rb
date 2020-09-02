@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def tag
     if params[:tag_name]
       @articles = Article.tagged_with("#{params[:tag_name]}")
-      @all = Article.all
+      @tags = ActsAsTaggableOn::Tag.all
     end
   end
 end

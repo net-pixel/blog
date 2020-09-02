@@ -43,10 +43,8 @@
   </div>
 <div class="tag">
   <div class="tag__cloud">
-    <% @all.each do |article|%>
-    <% article.tag_list.each do |tag| %>
-    <%= link_to tag, tag_path(tag_name: tag), class: "article-body__box__tag" %>
-    <% end %>
-    <% end %>
+   <% @tags.each do |tag| %>
+      <%= link_to "#{tag.name}", tag_path(tag_name: tag.name), class: "article-body__box__tag" %>
+   <% end %>
   </div>
 </div>
