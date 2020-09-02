@@ -7,6 +7,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  &__name {
+    font-size: 1.8rem;
+  }
+  &__count {
+    font-size: 1.2rem;
+  }
 }
 
 .main_bg {
