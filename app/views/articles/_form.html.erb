@@ -17,7 +17,7 @@
   <div class="user-form__field__title">タグ</div>
   <%= text_field_tag 'article[tag_list]', article.tag_list, class: "form-control" %>
   <div class="user-form__field__title">サムネイル</div>
-  <%= f.file_field :thumbnail, direct_upload: true, accept: "thumbnail/png, thumbnail/jpeg, thumbnail/gif" %>
+  <%= f.file_field :thumbnail, direct_upload: true, accept: "thumbnail/png, thumbnail/jpeg, thumbnail/gif, thumbnail/jpg" %>
   <div class="user-form__field__title">バナー</div>
   <%= f.file_field :banner %>
   <div class="user-form__field__title">コンテンツ</div>
