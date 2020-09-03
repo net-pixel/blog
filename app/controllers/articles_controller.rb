@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
   def show
     views = @article.views + 1
     @article.update(views: views)
-    @article = Article.all
+    @article = Article.all(article_params)
   end
 
   # GET /articles/new
