@@ -21,7 +21,7 @@
   <div class="user-form__field__title">バナー</div>
   <%= f.file_field :banner %>
   <div class="user-form__field__title">コンテンツ</div>
-  <%= f.rich_text_area :body %>
+  <%= f.rich_text_area :body, direct_upload: true, accept: "thumbnail/png, thumbnail/jpeg, thumbnail/gif, thumbnail/jpg" %>
   <div class="user-form__field__create">
     <%= f.submit :class=>"user-form__field__create__button" %>
   </div>
