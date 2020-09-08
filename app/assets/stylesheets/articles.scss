@@ -244,6 +244,15 @@ a.fab {
     align-items: center;
     flex-direction: column;
 }
+  .footer-ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-ad-content {
+  margin: 20px;
+}
 }
 
 @media screen and (max-width:540px){

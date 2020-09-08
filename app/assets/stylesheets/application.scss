@@ -58,6 +58,14 @@ background-color: var(--primary-color)!important;
 }
 
 footer {
+    .footer-ad {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-ad-content {
+        margin: 20px;
+      }
     .footer-top {
         display: flex;
         justify-content: center;
