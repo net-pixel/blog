@@ -58,6 +58,11 @@ background-color: var(--primary-color)!important;
 }
 
 footer {
+    .footer-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .footer-bottom {
         display: flex;
         justify-content: center;
@@ -91,6 +96,7 @@ footer {
 }
 a.admin {
     text-decoration: none;
+    margin: 0 10px;
     color: black;
     &:hover{
         color: black;
