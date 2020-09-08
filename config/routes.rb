@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'about', to: 'pages#about'
+  get 'privacy', to: 'pages#privacy'
   get 'search', to: 'pages#search'
   get 'search_result', to: 'pages#search_result'
   get 'tag', to: 'pages#tag'

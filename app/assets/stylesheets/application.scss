@@ -84,9 +84,18 @@ footer {
         &:hover {
             text-decoration: none;
             color: rgb(183, 185, 187);
+            cursor: auto;
         }
     }
   }
+}
+a.admin {
+    text-decoration: none;
+    color: black;
+    &:hover{
+        color: black;
+        text-decoration: none;
+    }
 }
 
 @media screen and (max-width:540px) {
