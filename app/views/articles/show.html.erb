@@ -16,9 +16,10 @@
         <%= link_to tag, tag_path(tag_name: tag), class: "article-body__box__tag" %>
       <% end %>
       <p class="lead">
-        <%= @article.updated_at.strftime("%Y年%m月%e日") %>
+        <%= @article.created_at.strftime("%Y年%m月%e日") %>
+        | <%= pluralize(@article.views, "View")%>
+        <p class="update">更新日：<%= @article.updated_at.strftime("%Y年%m月%e日") %></p>
         <%# by <%= @article.user.username %>
-        <%# | <%= pluralize(@article.views, "View") %>
       </p>
       <hr class="my-4" />
       <div class="article-body__box__lead">

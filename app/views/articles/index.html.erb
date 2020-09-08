@@ -15,7 +15,7 @@
           <%= article.title %>
         </div>
         <div class="article-body__box__lead">
-          <%= article.updated_at.strftime("%Y年%m月%e日") %> -
+          <%= article.created_at.strftime("%Y年%m月%e日") %> -
           <%# <%= article.user.username %> <%#編集者の表示%>
           <%# <%= pluralize(article.views, "View") %> <%#viewの表示%>
           <%= article.body.to_plain_text.first(100) %>
