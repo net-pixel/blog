@@ -15,38 +15,38 @@
       <% end %>
 
     </div>
-    <% if params[:q]['title_cont'] == "" %>
-    <div class="article-body" >
-    <p>検索キーワードを入力してください</p>
+    <% if params[:q][:body] == "" %>
+    <div class="article-body">
+      <p>検索キーワードを入力してください</p>
     </div>
     <% elsif @search.result.present? %>
     <%= "「#{params[:q][:body]}」の検索結果: #{@search.result.count}個" %>
     <% @articles.each do |article|%>
-      <%= link_to article_path(article) do %>
+    <%= link_to article_path(article) do %>
 
-      <div class="article-body__box" style="width:100%">
-        <div class="article-body__box__result">
-          <div class="article-body__box__result__image">
-            <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
-          </div>
-          <div class="article-body__box__result__content">
-            <div class="article-body__box__result__content__title">
-              <p><%= article.title %></p>
-            </div>
-            <div class="article-body__box__result__content__lead">
-              <%= article.updated_at.strftime("%Y年%m月%e日") %> -
-              <%= article.body.to_plain_text.first(100) %>
-            </div>
-          </div>
-
+    <div class="article-body__box" style="width:100%">
+      <div class="article-body__box__result">
+        <div class="article-body__box__result__image">
+          <%= image_tag(article.thumbnail, style:'width:100%') if article.thumbnail.attached? %>
         </div>
+        <div class="article-body__box__result__content">
+          <div class="article-body__box__result__content__title">
+            <p><%= article.title %></p>
+          </div>
+          <div class="article-body__box__result__content__lead">
+            <%= article.updated_at.strftime("%Y年%m月%e日") %> -
+            <%= article.body.to_plain_text.first(100) %>
+          </div>
+        </div>
+
       </div>
-      <% end %>
+    </div>
+    <% end %>
     <% end %>
     <% else%>
-    <div class="article-body" >
-    <p><%= "「#{params[:q][:body]}」の検索結果: #{@search.result.count}個" %></p>
-    <p>該当する記事はありませんでした</p>
+    <div class="article-body">
+      <p><%= "「#{params[:q][:body]}」の検索結果: #{@search.result.count}個" %></p>
+      <p>該当する記事はありませんでした</p>
     </div>
     <% end %>
 
