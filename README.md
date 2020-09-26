@@ -34,9 +34,6 @@
 - Scss
 - Bootstrap
 
-## Further development?
-コメント機能など必要に応じて追加する予定です。
-
 ## Details
 ここからは機能の詳細について説明
 
